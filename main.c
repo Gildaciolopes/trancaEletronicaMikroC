@@ -27,4 +27,21 @@ char comparasenha[]={'1','2','3','4'};
 int cnt=0, aux=0, aux2=0, i; //contador usado para mudar de coluna na impressão do lcd, variável do for
 
 void main(){
+  TRISC = 0b00000001; //definindo rc0 como entrada
+  PORTC = 0b00000001; //inicia rc0 com nvl logico alto
+    
+  Lcd_Init();
+  Lcd_Cmd(_LCD_CLEAR);
+  Lcd_Cmd(_LCD_CURSOR_OFF);
+  Delay_ms(200);
+  Lcd_Out(1, 4, texto1); //show_message "bem vindo"
+  Delay_ms(200);
+    
+  for(i = 3; i < 12; i++){    //apaga letra por letra
+    Lcd_Out(1,(i+1)," ");
+    Delay_ms(10);
+  }
+  Delay_ms(100);
+    
+  Keypad_Init();
 }

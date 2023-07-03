@@ -1,6 +1,6 @@
-#define d1 PORTC.RC7 //led verde
-#define d2 PORTC.RC6 //led vermelho
-#define porta PORTC.RC0
+#define d1 (RC7_bit) //led verde
+#define d2 (RC6_bit) //led vermelho
+#define porta (RC0_bit)
 
 char keypadPort at PORTB;
 
@@ -39,7 +39,7 @@ void main(){
 
     for(i = 3; i < 12; i++){    //apaga letra por letra
        Lcd_Out(1,(i+1)," ");
-       Delay_ms(10);
+       Delay_ms(20);
     }
     Delay_ms(100);
 

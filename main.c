@@ -1,6 +1,6 @@
-#define d1 portc.f7 //led verde
-#define d2 portc.f6 //led vermelho
-#define porta portc.f0
+#define d1 PORTC.RC7 //led verde
+#define d2 PORTC.RC6 //led vermelho
+#define porta PORTC.RC0
 
 char keypadPort at PORTB;
 
@@ -20,7 +20,7 @@ sbit LCD_D6_Direction at TRISD2_bit;
 sbit LCD_D7_Direction at TRISD3_bit;
 
 unsigned short kp; //variável que irá receber o comando da tecla
-char texto1[]="Bem Vindo";
+char texto1[]="Tranca do Gil";
 char texto2[]="Digite sua senha:";
 char senha[3];
 char comparasenha[]={'1','2','3','4'};
@@ -57,7 +57,7 @@ void main(){
       
          do{
          
-         kp = Keypad_Key_Click(); //armazana em kp a variavel clicada
+           kp = Keypad_Key_Click(); //armazana em kp a variavel clicada
          }while(!kp);
 
         switch (kp){
